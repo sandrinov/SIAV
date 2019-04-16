@@ -27,6 +27,11 @@ namespace Siav_MVC.Controllers
             return View();
         }
 
+        public ActionResult TestJQuery()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(DTO_Employee employee)
