@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <span id='value1'>(Result)</span>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // TODO: Replace with the URL of your WebService app
+        var serviceUrl = 'http://localhost:12146/api/';
+
+        $(document).ready(function () {
+
+            $.ajax(
+                {
+                    type: 'get',
+                    url: serviceUrl + 'employeebyid?IDEmployee=3'
+                }
+            ).done(function (data) {
+                $('#value1').text(data);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                $('#value1').text(jqXHR.responseText || textStatus);
+            });
+
+
+        });
+
+
+
+
+
+
+    </script>
+}

@@ -1,7 +1,16 @@
-﻿@{
+﻿@using Siav_MVC.Extensions;
+
+@{
     ViewBag.Title = "About";
+    var _mc = ViewBag.Obj;
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+<h3>@_mc.MyProperty</h3>
+<div>
+    @Html.MyMethod("MyLabel", "Content")
+</div>
+
+
